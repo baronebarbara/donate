@@ -21,6 +21,7 @@
 		B151A626265B02310034838C /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151A625265B02310034838C /* HomeInteractor.swift */; };
 		B151A628265B040C0034838C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B151A627265B040C0034838C /* HomeCoordinator.swift */; };
 		B1777798265C9540003F0AF3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1777797265C9540003F0AF3 /* HomeView.swift */; };
+		B17777DB265CA125003F0AF3 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17777DA265CA125003F0AF3 /* ViewConfiguration.swift */; };
 		B1951DA7265C8A2D00D31B47 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1951DA6265C8A2D00D31B47 /* Strings.swift */; };
 		B1951DAB265C8CAC00D31B47 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1951DAA265C8CAC00D31B47 /* HomeCollectionViewCell.swift */; };
 		FF55AAB7C44FEB69CA95D599 /* Pods_DonateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916299E992165EDD75E2361E /* Pods_DonateTests.framework */; };
@@ -69,6 +70,7 @@
 		B151A625265B02310034838C /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		B151A627265B040C0034838C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		B1777797265C9540003F0AF3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B17777DA265CA125003F0AF3 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		B1951DA6265C8A2D00D31B47 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B1951DAA265C8CAC00D31B47 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D497A1E0C7BD3B3A32FE614C /* Pods-Donate-DonateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donate-DonateUITests.release.xcconfig"; path = "Target Support Files/Pods-Donate-DonateUITests/Pods-Donate-DonateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				B1951DA6265C8A2D00D31B47 /* Strings.swift */,
+				B17777DA265CA125003F0AF3 /* ViewConfiguration.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				B151A5DF265AFCDF0034838C /* HomeFactory.swift in Sources */,
 				B151A628265B040C0034838C /* HomeCoordinator.swift in Sources */,
 				B151A622265AFF080034838C /* HomePresenter.swift in Sources */,
+				B17777DB265CA125003F0AF3 /* ViewConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
