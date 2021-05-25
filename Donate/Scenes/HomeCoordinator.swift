@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 enum HomeCoordinatorAction: Equatable {
-    case back
+    case open
 }
 
 protocol HomeCoordinating: AnyObject {

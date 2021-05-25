@@ -16,6 +16,6 @@ final class HomePresenter {
 
 extension HomePresenter: HomePresenting {
     func didSelect() {
-        coordinator.perform(action: .back)
+        coordinator.perform(action: .open)
     }
 }
