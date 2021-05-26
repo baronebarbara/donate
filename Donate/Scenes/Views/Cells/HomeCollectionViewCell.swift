@@ -2,13 +2,10 @@ import UIKit
 import SnapKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-    let cellImage: UIImageView = {
-        var image = UIImageView()
-        
-        return image
-    }()
+    let cellImage = UIImageView()
     
-    func setUp() {
+    func setUp(image: UIImage) {
+        cellImage.image = image
         buildLayout()
     }
 }
