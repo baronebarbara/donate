@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 protocol HomeDisplaying: AnyObject {
     
@@ -6,6 +7,16 @@ protocol HomeDisplaying: AnyObject {
 
 final class HomeViewController: UIViewController {
     private let interactor: HomeInteracting
+    
+    private let headerView = HeaderView()
+    
+    private let collectionView: UICollectionView = {
+        let collection = UICollectionView(frame: .zero)
+        collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collection.delegate = self
+        collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
+        return collection
+    }()
     
     init(interactor: HomeInteracting) {
         self.interactor = interactor
@@ -17,9 +28,27 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: Strings.Color.background)
+        buildLayout()
     }
 }
 
 extension HomeViewController: HomeDisplaying {
     
+}
+
+extension HomeViewController: ViewConfiguration {
+    func buildViewHierarchy() {
+        view.addSubview(headerView)
+        view.addSubview(collectionView)
+    }
+    
+    func setupContraints() {
+        
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("click")
+    }
 }
