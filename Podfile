@@ -6,7 +6,7 @@ target 'Donate' do
   use_frameworks!
 
   # Pods for Donate
-  pod 'SnapKit', '~> 5.0.0'
+    pod 'SnapKit', '~> 5.0.0'
 
   target 'DonateTests' do
     inherit! :search_paths

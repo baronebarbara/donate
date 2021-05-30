@@ -11,7 +11,7 @@ final class HomeViewController: UIViewController {
     private let headerView = HeaderView()
     
     private let collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero)
+        let collection = UICollectionView(frame: view.bounds)
         collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collection.delegate = self
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
@@ -29,6 +29,10 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: Strings.Color.background)
         buildLayout()
+    }
+    
+    func generateLayout() -> UICollectionViewLayout {
+        
     }
 }
 
@@ -51,4 +55,8 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("click")
     }
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    
 }

@@ -115,7 +115,7 @@
 		724FB64349F5678CE1709979CF0DD952 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7889131C1139F96BBDA94CEE2E694763 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
-		794959F97B56778D646D0F927F78120E /* Pods_Donate_DonateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Donate_DonateUITests.framework; path = "Pods-Donate-DonateUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		794959F97B56778D646D0F927F78120E /* Pods_Donate_DonateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donate_DonateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE00ECC24C5CC6DC938204FF42AD0E5 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
 		7C21E0C93A1141A1E2EB51575500E27D /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		7C2EC377264B25FB0E67D150E37E87CD /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
@@ -124,15 +124,15 @@
 		91A53CAF547D71AEFABE49D91B4E6816 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		9716AD15FADF38A93170E034F2BCE457 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		974D06FD5BA0280CF9E519A9694EDF31 /* Pods-Donate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Donate.release.xcconfig"; sourceTree = "<group>"; };
-		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A33149819CD52E825135830F2D89A47 /* Pods-Donate-DonateUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Donate-DonateUITests-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1CD432F32277BB93DEAADA626ECEC5B /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
-		A33D34BB03B85C61F1ED87FB2588AC86 /* Pods_Donate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Donate.framework; path = "Pods-Donate.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A33D34BB03B85C61F1ED87FB2588AC86 /* Pods_Donate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3993DEB062130D671CA8940B4168BEA /* Pods-Donate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Donate-umbrella.h"; sourceTree = "<group>"; };
 		A51E99894F75F00A281BE6A32FBDE495 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		A7D358AA1606C7B2CDC8555485807E9E /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
-		B0B2201D298AC0F10E40714467674098 /* Pods_DonateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DonateTests.framework; path = "Pods-DonateTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0B2201D298AC0F10E40714467674098 /* Pods_DonateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DonateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C20EE4410D4C2B3E70CD3E44617C39 /* Pods-Donate-DonateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Donate-DonateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B954B95D26130013D365F352933FE4D3 /* Pods-Donate-DonateUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Donate-DonateUITests.modulemap"; sourceTree = "<group>"; };
 		BE0BE9F3D55FDB29EF516F6D6B1B6BCA /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
@@ -278,7 +278,6 @@
 				6A9341666EAC154422A032092A7DC2D7 /* UILayoutSupport+Extensions.swift */,
 				843EFF0C650682C304D518A9092EE9FD /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
