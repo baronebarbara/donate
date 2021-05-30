@@ -11,9 +11,9 @@ final class HomeViewController: UIViewController {
     private let headerView = HeaderView()
     
     private let collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: view.bounds)
+        let collection = UICollectionView(frame: .zero)
         collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collection.delegate = self
+       // collection.delegate = self
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
         return collection
     }()
@@ -31,9 +31,9 @@ final class HomeViewController: UIViewController {
         buildLayout()
     }
     
-    func generateLayout() -> UICollectionViewLayout {
-        
-    }
+//    func generateLayout() -> UICollectionViewLayout {
+//        return nil
+//    }
 }
 
 extension HomeViewController: HomeDisplaying {
@@ -41,6 +41,10 @@ extension HomeViewController: HomeDisplaying {
 }
 
 extension HomeViewController: ViewConfiguration {
+    func configureViews() {
+    
+    }
+    
     func buildViewHierarchy() {
         view.addSubview(headerView)
         view.addSubview(collectionView)
@@ -57,6 +61,8 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource {
-    
-}
+//extension HomeViewController: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//    }
+//}
