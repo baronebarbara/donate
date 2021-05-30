@@ -11,7 +11,10 @@ final class HomeViewController: UIViewController {
     private let headerView = HeaderView()
     
     private let collectionView: UICollectionView = {
-        let collection = UICollectionView(frame: .zero)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
        // collection.delegate = self
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
