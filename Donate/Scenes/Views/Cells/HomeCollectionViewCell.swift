@@ -5,12 +5,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "HomeCollectionViewCell"
     let cellImage = UIImageView()
     
-    init() {
-        super.init(frame: .zero)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         buildLayout()
     }
-    
-    required init?(coder: NSCoder) { nil }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        buildLayout()
+    }
     
     func setUp(image: UIImage) {
         cellImage.image = image

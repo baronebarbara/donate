@@ -11,12 +11,12 @@ final class HomeViewController: UIViewController {
     private let headerView = HeaderView()
     
     func configureCollectionView() {
-        let collection = UICollectionView(frame: view.bounds, collectionViewLayout: generateLayout())
-        collection.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
         view.addSubview(collection)
         collection.delegate = self
-        collection.backgroundColor = UIColor(named: Strings.Color.white)
-        collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
+        collection.dataSource = self
+        collection.backgroundColor = UIColor(named: Strings.Color.purple)
+        collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     
     init(interactor: HomeInteracting) {
@@ -85,8 +85,14 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
-//extension HomeViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//    }
-//}
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? HomeCollectionViewCell
+        
+        return cell ?? UICollectionViewCell()
+    }
+}
