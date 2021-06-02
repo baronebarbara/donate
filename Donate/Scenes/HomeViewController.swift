@@ -1,6 +1,11 @@
 import UIKit
 import SnapKit
 
+enum Section {
+    case Species
+    case Donate
+}
+
 protocol HomeDisplaying: AnyObject {
     
 }
@@ -10,18 +15,15 @@ final class HomeViewController: UIViewController {
     
     private let headerView = HeaderView()
     
-    func configureCollectionView() {
+    private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: generateLayout())
-        view.addSubview(collection)
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = UIColor(named: Strings.Color.white)
         collection.register(SpeciesCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collection.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(300)
-            $0.trailing.leading.bottom.equalToSuperview()
-        }
-    }
+//        collection.register(DonateCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        return collection
+    }()
     
     init(interactor: HomeInteracting) {
         self.interactor = interactor
@@ -33,20 +35,18 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: Strings.Color.background)
-        configureCollectionView()
         buildLayout()
     }
     
     func generateLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            return self.generateHomeCellLayout()
+        UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            return self.generateSpeciesCellLayout()
         }
-        return layout
     }
 }
 
 extension HomeViewController {
-    func generateHomeCellLayout() -> NSCollectionLayoutSection {
+    func generateSpeciesCellLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -63,6 +63,24 @@ extension HomeViewController {
         
         return section
     }
+    
+    func generateDonateCellLayout() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(140), heightDimension: .absolute(100))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "Doar", alignment: .top)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        return section
+    }
 }
 
 extension HomeViewController: HomeDisplaying {
@@ -71,15 +89,19 @@ extension HomeViewController: HomeDisplaying {
 
 extension HomeViewController: ViewConfiguration {
     func configureViews() {
-    
+    //nem queria que voce tivesse aqui 
     }
     
     func buildViewHierarchy() {
         view.addSubview(headerView)
+        view.addSubview(collectionView)
     }
     
     func setupContraints() {
-        
+        collectionView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(300)
+            $0.trailing.leading.bottom.equalToSuperview()
+        }
     }
 }
 
@@ -99,4 +121,11 @@ extension HomeViewController: UICollectionViewDataSource {
         
         return cell ?? UICollectionViewCell()
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        if kind == "Espécies" {
+//            print("batata")
+//        }
+//        return UICollectionReusableView()
+//    }
 }
