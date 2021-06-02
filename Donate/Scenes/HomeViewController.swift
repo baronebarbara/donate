@@ -15,8 +15,12 @@ final class HomeViewController: UIViewController {
         view.addSubview(collection)
         collection.delegate = self
         collection.dataSource = self
-        collection.backgroundColor = UIColor(named: Strings.Color.purple)
-        collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.backgroundColor = UIColor(named: Strings.Color.white)
+        collection.register(SpeciesCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(300)
+            $0.trailing.leading.bottom.equalToSuperview()
+        }
     }
     
     init(interactor: HomeInteracting) {
@@ -46,7 +50,7 @@ extension HomeViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(140), heightDimension: .absolute(186))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(140), heightDimension: .absolute(100))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
         group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
@@ -62,7 +66,7 @@ extension HomeViewController {
 }
 
 extension HomeViewController: HomeDisplaying {
-    
+    //Aqui ainda será implementado conforme coisas que vierem do interactor
 }
 
 extension HomeViewController: ViewConfiguration {
@@ -91,7 +95,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SpeciesCollectionViewCell
         
         return cell ?? UICollectionViewCell()
     }

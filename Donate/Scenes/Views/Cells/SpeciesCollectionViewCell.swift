@@ -1,8 +1,7 @@
 import UIKit
 import SnapKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier = "HomeCollectionViewCell"
+class SpeciesCollectionViewCell: UICollectionViewCell {
     let cellImage = UIImageView()
     
     override init(frame: CGRect) {
@@ -20,7 +19,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension HomeCollectionViewCell: ViewConfiguration {
+extension SpeciesCollectionViewCell: ViewConfiguration {
     func buildViewHierarchy() {
         addSubview(cellImage)
     }
