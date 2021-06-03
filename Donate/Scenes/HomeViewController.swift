@@ -1,10 +1,6 @@
 import UIKit
 import SnapKit
 
-enum Section {
-    case Species
-    case Donate
-}
 
 protocol HomeDisplaying: AnyObject {
     
@@ -20,8 +16,8 @@ final class HomeViewController: UIViewController {
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = UIColor(named: Strings.Color.white)
-        collection.register(SpeciesCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-//        collection.register(DonateCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.register(SpeciesCollectionViewCell.self, forCellWithReuseIdentifier: "speciesCell")
+        collection.register(DonateCollectionViewCell.self, forCellWithReuseIdentifier: "donateCell")
         return collection
     }()
     
@@ -40,13 +36,13 @@ final class HomeViewController: UIViewController {
     
     func generateLayout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            return self.generateSpeciesCellLayout()
+            return self.generateCellLayout()
         }
     }
 }
 
 extension HomeViewController {
-    func generateSpeciesCellLayout() -> NSCollectionLayoutSection {
+    func generateCellLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -56,24 +52,6 @@ extension HomeViewController {
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "Espécies", alignment: .top)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [sectionHeader]
-        section.orthogonalScrollingBehavior = .groupPaging
-        
-        return section
-    }
-    
-    func generateDonateCellLayout() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(140), heightDimension: .absolute(100))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: "Doar", alignment: .top)
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [sectionHeader]
@@ -112,20 +90,26 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? SpeciesCollectionViewCell
-        
+        guard indexPath.section == 0 else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "donateCell", for: indexPath) as? DonateCollectionViewCell
+            return cell ?? UICollectionViewCell()
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "speciesCell", for: indexPath) as? SpeciesCollectionViewCell
         return cell ?? UICollectionViewCell()
     }
     
 //    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 //        if kind == "Espécies" {
 //            print("batata")
-//        }
+//        } VAMO DEIXA AQUI PORQUE VOU PRECISAR CRIAR AS SECTIONS
 //        return UICollectionReusableView()
 //    }
 }
