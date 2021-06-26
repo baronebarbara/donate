@@ -32,6 +32,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: Strings.Color.background)
         buildLayout()
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func generateLayout() -> UICollectionViewLayout {
@@ -66,18 +67,20 @@ extension HomeViewController: HomeDisplaying {
 }
 
 extension HomeViewController: ViewConfiguration {
-    func configureViews() {
-    //nem queria que voce tivesse aqui 
-    }
-    
     func buildViewHierarchy() {
         view.addSubview(headerView)
         view.addSubview(collectionView)
     }
     
     func setupContraints() {
+        headerView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.trailing.leading.equalToSuperview()
+            $0.height.equalTo(300)
+        }
+        
         collectionView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(300)
+            $0.top.equalTo(headerView.snp.bottom)
             $0.trailing.leading.bottom.equalToSuperview()
         }
     }
