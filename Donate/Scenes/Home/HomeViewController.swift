@@ -18,7 +18,14 @@ final class HomeViewController: UIViewController {
         collection.backgroundColor = UIColor(named: Strings.Color.white)
         collection.register(SpeciesCollectionViewCell.self, forCellWithReuseIdentifier: "speciesCell")
         collection.register(DonateCollectionViewCell.self, forCellWithReuseIdentifier: "donateCell")
+        collection.layer.cornerRadius = 20
         return collection
+    }()
+    
+    private lazy var footerImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: Strings.Images.Ilustrations.familyPets)
+        return image
     }()
     
     init(interactor: HomeInteracting) {
@@ -70,6 +77,7 @@ extension HomeViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(headerView)
         view.addSubview(collectionView)
+        view.addSubview(footerImage)
     }
     
     func setupContraints() {
@@ -82,6 +90,12 @@ extension HomeViewController: ViewConfiguration {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(headerView.snp.bottom)
             $0.trailing.leading.bottom.equalToSuperview()
+        }
+        
+        footerImage.snp.makeConstraints {
+            $0.height.equalTo(200)
+            $0.bottom.equalTo(collectionView.snp.bottom)
+            $0.trailing.leading.equalTo(collectionView).inset(20)
         }
     }
 }
